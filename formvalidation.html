@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_validation</title>
+    <script>
+        function validation() {
+            if (document.formfill.Username.value == "") {
+                document.getElementById("result").innerHTML = "enter username*";
+                return false;
+            } else if (document.formfill.Username.value.length < 5) {
+                document.getElementById("result").innerHTML = "Atleast 5 character";
+                return false;
+            } else if (document.formfill.Email.value == "") {
+                document.getElementById('result').innerHTML = "enter E-mail*";
+                return false;
+            } else if (document.formfill.password.value == "") {
+                document.getElementById('result').innerHTML = "enter password*";
+                return false;
+            } else if (document.formfill.password.value.length < 6) {
+                document.getElementById('result').innerHTML = "length should greater then 6";
+                return false;
+            } else if (document.formfill.Cpassword.value == "") {
+                document.getElementById('result').innerHTML = "enter confirm password*";
+                return false;
+            } else if (document.formfill.password.value != document.formfill.Cpassword.value) {
+                document.getElementById('result').innerHTML = "enter the same password";
+                return false;
+            }
+
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: url(wallpaper1.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+            min-height: 100vh;
+            width: 100%;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .box {
+            position: relative;
+            width: 400px;
+            height: 550px;
+            border: 2px solid white;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .box h2 {
+            text-align: center;
+            color: white;
+            width: 300;
+            font-size: 32px;
+        }
+        
+        .box .input-box {
+            position: relative;
+            margin: 30px 0;
+            width: 310px;
+            border-bottom: 2px solid white;
+        }
+        
+        .box .input-box input {
+            width: 100%;
+            height: 45px;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 0 20px 0 5px;
+            color: white;
+            font-size: 16px;
+        }
+        
+        input::placeholder {
+            color: white;
+        }
+        
+        .btn {
+            color: white;
+            background: grey;
+            width: 100%;
+            height: 50px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+            box-shadow: 3px 0 10px black;
+        }
+        
+        .group {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .group span a {
+            color: white;
+            position: relative;
+            top: 30px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        #result {
+            color: red;
+            top: 25px;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .popup {
+            width: 400px;
+            background-color: gey;
+            border-radius: 15px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <form action="" name="formfill" onsubmit="return validation()">
+                <h2>LOGIN</h2>
+                <p id="result"></p>
+                <div class="input-box">
+                    <input type="text" name="Username" placeholder="Username">
+                </div>
+                <div class="input-box">
+
+                    <input type="Email" name="Email" placeholder="Email"></i>
+                </div>
+                <div class="input-box">
+
+                    <input type="password" name="password" placeholder="password">
+                </div>
+
+                <div class="button">
+                    <input type="submit" class="btn" value="submit">
+                </div>
+                <div class="group">
+                    <span><a href="#">forget-password</a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+   
+</body>
+</html>
