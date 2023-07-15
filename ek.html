@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tempreature converter</title>
+    <script>
+        function callme(num1) {
+            num1 = parseFloat(num1);
+            document.getElementById('answer').innerHTML = (num1 - 32) / 1.8
+
+        }
+
+        function callout(num3) {
+            num3 = parseFloat(num3);
+            document.getElementById('answer2').innerHTML = (num3 * 1.8) + 32
+        }
+    </script>
+    <style>
+        * {
+            /* margin: 0; */
+            /* padding: 0; */
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: url(imaggeee.jpg) no-repeat;
+            background-size: cover;
+            width: 100%;
+        }
+        
+        .rum {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .nav1 {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 400px;
+            height: 550px;
+            border: 2px solid white;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+        }
+        
+        .nav2 {
+            margin-bottom: -80px;
+            padding-bottom: 80px;
+            background: trans;
+        }
+        
+        .nav2 h2 {
+            color: aliceblue;
+            width: 300;
+            font-size: 32px;
+        }
+        
+        .nav2 label {
+            position: relative;
+            color: white;
+            width: 100%;
+            height: 45px;
+            border: none;
+            outline: none;
+            padding: 0 20px 0 5px;
+        }
+        
+        .nav2 span {
+            color: white;
+            font-size: 16px;
+        }
+        
+        .nav3 {
+            margin-top: -50vh;
+            padding-top: -50px;
+        }
+        
+        .nav3 label {
+            position: relative;
+            color: white;
+            background: transparent;
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            padding: 0 27px 0 11px;
+        }
+        
+        .nav3 span {
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rum">
+        <div class="nav1">
+            <div class="nav2">
+                <h2> Temperature converter</h2>
+                <form>
+                    <label>Ferhanite:</label>
+                    <input id="num" type="number" placeholder="ferhanite" oninput="callme(this.value)" onchange="callme(this.value)">
+                    <br>
+                    <label>Celcius:-</label>
+                    <span id="answer"></span>
+                </form>
+            </div>
+            <br>
+            <div class="nav3">
+                <form>
+                    <label>Celsuis:</label>
+                    <input id="num2" type="number" placeholder="celsuis" oninput="callout(this.value)" onchange="callout(this.value)">
+                    <br>
+                    <label>Ferhenite:-</label>
+                    <span id="answer2"></span>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
